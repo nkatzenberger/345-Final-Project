@@ -1,8 +1,9 @@
 #include <iostream>
+#include <string>
+#include "ref.h"
 using namespace std;
 int main(){
-    String yn = "yes"
-    
+    String yn = "yes";
     while(yn == "yes"){
     String input;
     cout<< "Enter Coordinates for the x axis of the Vertex";
@@ -18,8 +19,8 @@ int main(){
     double z;
     z = stod(input);
     cout<< "Enter stop to stop putting inputs in";
-    cin >> yn
+    cin >> yn;
     Vertex firstV(x, y, z);
-
+"yyy"
     }
 }
