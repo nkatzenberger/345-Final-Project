@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+class Vertex {
+    public:
+        double x;
+        double y;
+        double z;
+        void setX;
+        void setY;
+        void setZ;
+
+void setX(double inx){
+    x = inx;
+}
+void setY(double iny){
+    y = iny;
+}
+void setZ(double inz){
+    z = inz;
+}
+};
+int main(){
+Vertex newVertex;
+}
+"change"
