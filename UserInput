@@ -3,6 +3,7 @@
 #include "ref.h"
 using namespace std;
 int main(){
+    list<Vertex> Verticies;
     String yn = "yes";
     while(yn == "yes"){
     string input;
@@ -19,10 +20,8 @@ int main(){
     double z;
     z = stod(input);
     cout<< "Enter stop to stop putting inputs in";
-    <<<<<<< HEAD
     cin >> yn
     Vertex V(x, y, z);
-    Verticies.push_back
-
+    Verticies.push_back(V);
     }
 }
