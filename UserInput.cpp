@@ -37,8 +37,9 @@ int main() {
     cin >> faces;
 	//const int number = 1;
 	vector<Face> vectorFaces;
+    int defaultColor[3] = {1,1,1}  
     for(int i =0; i<= faces-3; i++){
-        Face f(Vertices[i], Vertices[i+1], Vertices[i+2]);
+        Face f(Vertices[i], Vertices[i+1], Vertices[i+2], defaultColor);
         vectorFaces.push_back(f);
     }
 
