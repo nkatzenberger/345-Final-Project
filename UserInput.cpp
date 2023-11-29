@@ -13,29 +13,35 @@ int main() {
     string yn = "yes";
 
     while(yn == "yes"){
-    string input;
-    cout<< "Enter Coordinates for the x axis of the Vertex";
-   double x;
-    cin >> input;
-    x = stod(input);
-    cout<< "Enter Coordinates for the y axis fo the Vertex";
-    cin >> input;
-    double y;
-    y = stod(input);
-    cout << "Enter coordinates for the z axis of the Vertex";
-    cin >> input;
-    double z;
-    z = stod(input);
-    cout<< "Enter stop to stop putting inputs in";
-    cin >> yn;
-    vector<Vertex> Vertices;
-    Vertex V(x, y, z);
-    Verticies.push_back(V);
+        string input;
+        cout<< "Enter Coordinates for the x axis of the Vertex";
+        double x;
+        cin >> input;
+        x = stod(input);
+        cout<< "Enter Coordinates for the y axis fo the Vertex";
+        cin >> input;
+        double y;
+        y = stod(input);
+        cout << "Enter coordinates for the z axis of the Vertex";
+        cin >> input;
+        double z;
+        z = stod(input);
+        cout<< "Enter stop to stop putting inputs in";
+        cin >> yn;
+        vector<Vertex> Vertices;
+        Vertex V(x, y, z);
+        Vertices.push_back(V);
+    }
 	//ask user, how many faces?
-	const int number = 1;
-
-	Face* faces = new Face[number];
-
+    cout << "How many faces?";
+    int faces;
+    cin >> faces;
+	//const int number = 1;
+	vector<Face> vectorFaces;
+    for(int i =0; i<= faces; i++){
+        Face f(Vertices[i], Vertices[i+1], Vertices[i+2]);
+        vectorFaces.push_back(f);
+    }
 	//change aspects of faces
 	faces[0].V1.x = 1;
 	faces[0].V1.y = 1;
