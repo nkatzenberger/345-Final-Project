@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include "ref.h"
 using namespace std;
 class UserInput {
