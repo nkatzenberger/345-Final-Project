@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int main(){
+    String input;
+    cout<< "Enter Coordinates for the x axis of the Vertex";
+   double x;
+    cin >> input;
+    x = stod(input);
+    cout<< "Enter Coordinates for the y axis fo the Vertex";
+    cin >> input;
+    double y;
+    y = stod(input);
+    cout << "Enter coordinates for hte z axis of the Vertex";
+    cin >> input;
+    double z;
+    z = stod(input);
+
+    Vertex  Vertex
+}

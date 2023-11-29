@@ -13,6 +13,12 @@ public:
         double getX;
         double getY;
         double getZ;
+    
+    Vertex (inputx, inputy, inputz){
+        x = inputx;
+        y = inputy;
+        z = inputz;
+    }
 
     void setX(double inx){
         x = inx;
