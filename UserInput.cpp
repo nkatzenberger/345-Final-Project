@@ -11,7 +11,7 @@ public:
 
 int main() {
     string yn = "yes";
-
+    vector<Vertex> Vertices;
     while(yn == "yes"){
         string input;
         cout<< "Enter Coordinates for the x axis of the Vertex";
@@ -28,7 +28,6 @@ int main() {
         z = stod(input);
         cout<< "Enter stop to stop putting inputs in";
         cin >> yn;
-        vector<Vertex> Vertices;
         Vertex V(x, y, z);
         Vertices.push_back(V);
     }
