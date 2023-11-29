@@ -9,4 +9,9 @@ public:
 			allFaces[i] = inputFaces[i];
 		}
 	}
+	void delete(){
+		for (Face allFaces[]: dd){
+		dd = null;
+		}
+	}
 };
