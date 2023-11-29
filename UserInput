@@ -3,9 +3,9 @@
 #include "ref.h"
 using namespace std;
 int main(){
-    String yn = "yes";
+    string yn = "yes";
     while(yn == "yes"){
-    String input;
+    string input;
     cout<< "Enter Coordinates for the x axis of the Vertex";
    double x;
     cin >> input;
@@ -14,13 +14,13 @@ int main(){
     cin >> input;
     double y;
     y = stod(input);
-    cout << "Enter coordinates for hte z axis of the Vertex";
+    cout << "Enter coordinates for the z axis of the Vertex";
     cin >> input;
     double z;
     z = stod(input);
     cout<< "Enter stop to stop putting inputs in";
     cin >> yn;
     Vertex firstV(x, y, z);
-"yyy"
+
     }
 }
