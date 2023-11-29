@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include "ref.h"
+using namespace std;
+int main(){
+    string yn = "yes";
+    while(yn == "yes"){
+    string input;
+    cout<< "Enter Coordinates for the x axis of the Vertex";
+   double x;
+    cin >> input;
+    x = stod(input);
+    cout<< "Enter Coordinates for the y axis fo the Vertex";
+    cin >> input;
+    double y;
+    y = stod(input);
+    cout << "Enter coordinates for the z axis of the Vertex";
+    cin >> input;
+    double z;
+    z = stod(input);
+    cout<< "Enter stop to stop putting inputs in";
+    cin >> yn;
+    Vertex firstV(x, y, z);
+
+    }
+}
