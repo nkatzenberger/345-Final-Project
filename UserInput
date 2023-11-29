@@ -1,18 +1,9 @@
 #include <iostream>
-<<<<<<< HEAD
-#include <string>
-=======
 #include <string>
 #include "ref.h"
->>>>>>> d87b0331d80283b7287b416ac8c734385a2e6f43
 using namespace std;
 int main(){
-<<<<<<< HEAD
-    string yn = "yes";
-    list<Vertex> Verticies;
-=======
     String yn = "yes";
->>>>>>> d87b0331d80283b7287b416ac8c734385a2e6f43
     while(yn == "yes"){
     string input;
     cout<< "Enter Coordinates for the x axis of the Vertex";
@@ -28,15 +19,10 @@ int main(){
     double z;
     z = stod(input);
     cout<< "Enter stop to stop putting inputs in";
-<<<<<<< HEAD
+    <<<<<<< HEAD
     cin >> yn
     Vertex V(x, y, z);
     Verticies.push_back
 
-=======
-    cin >> yn;
-    Vertex firstV(x, y, z);
-"yyy"
->>>>>>> d87b0331d80283b7287b416ac8c734385a2e6f43
     }
 }
