@@ -37,18 +37,19 @@ int main() {
     cin >> faces;
 	//const int number = 1;
 	vector<Face> vectorFaces;
-    for(int i =0; i<= faces; i++){
+    for(int i =0; i<= faces-3; i++){
         Face f(Vertices[i], Vertices[i+1], Vertices[i+2]);
         vectorFaces.push_back(f);
     }
-	//change aspects of faces
-	faces[0].V1.x = 1;
-	faces[0].V1.y = 1;
-	faces[0].V1.z = 1;
 
-	faces[0].V2.x = 0;
-	faces[0].V2.y = 2;
-	faces[0].V2.z = -1;
+	//change aspects of faces
+	vectorFaces[0].V1.x = 1;
+	vectorFaces[0].V1.y = 1;
+	vectorFaces[0].V1.z = 1;
+
+	vectorFaces[0].V2.x = 0;
+	vectorFaces[0].V2.y = 2;
+	vectorFaces[0].V2.z = -1;
 	//leave V3 as 0,0,0
 
 	faces[0].RGB[0] = 255; //makes red tri
