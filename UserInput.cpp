@@ -12,24 +12,39 @@ public:
 int main() {
     string yn = "yes";
     vector<Vertex> Vertices;
-    while(yn == "yes"){
+    vector<Face> Faces;
+    fcount = 1;
+    while(yn != "stop"){
         string input;
-        cout<< "Enter Coordinates for the x axis of the Vertex";
-        double x;
+        cout<< "Enter Coordinates for the x, y, and z axis of vertex number " + Verticies.size()+1 + " of face number" + fcount + "in a comma or space separated list";
+        double  xyz [3]; 
         cin >> input;
-        x = stod(input);
-        cout<< "Enter Coordinates for the y axis fo the Vertex";
-        cin >> input;
-        double y;
-        y = stod(input);
-        cout << "Enter coordinates for the z axis of the Vertex";
-        cin >> input;
-        double z;
-        z = stod(input);
-        cout<< "Enter stop to stop putting inputs in";
-        cin >> yn;
-        Vertex V(x, y, z);
+        string number;
+        int count =0;
+        for (int x = 0; x<input.size(); x++){
+            if (input[x] == ' ' || intput[x] == ","){
+                xyz[count] = stod(number);
+                number = ""; count ++;
+            }
+            else if (input.substr(x,2) = ", "){
+                 xyz[count] = stod(number);
+                number = ""; count +=2;
+            }
+            else{
+                number = number + x;
+            }
+        }
+        if(Verticies.size+1 > 3){
+            Face F(Verticies[0], Verticies[1], Verticies[2])
+            Verticies.clear();
+            fcount++;
+        }
+        else{
+         Vertex V(xyz[0], xyz[1], xyz[2]);
         Vertices.push_back(V);
+        cout<< "Enter stop to stop entering values";
+        cin >> yn;   
+    }
     }
 	//ask user, how many faces?
     cout << "How many faces?";
