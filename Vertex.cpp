@@ -7,9 +7,6 @@ public:
         double x;
         double y;
         double z;
-        void setX();
-        void setY();
-        void setZ();
         double getX;
         double getY;
         double getZ;

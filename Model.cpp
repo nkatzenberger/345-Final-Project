@@ -13,5 +13,4 @@ public:
 		for (Face allFaces[]: dd){
 		dd = null;
 	}*/
-	}
 };
