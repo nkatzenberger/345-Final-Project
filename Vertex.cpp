@@ -7,14 +7,14 @@ public:
         double x;
         double y;
         double z;
-        void setX;
-        void setY;
-        void setZ;
+        void setX();
+        void setY();
+        void setZ();
         double getX;
         double getY;
         double getZ;
     
-    Vertex (inputx, inputy, inputz){
+    Vertex(double inputx, double inputy, double inputz){
         x = inputx;
         y = inputy;
         z = inputz;
@@ -39,6 +39,3 @@ public:
         return z;
     }
 };
-int main(){
-Vertex newVertex;
-}
