@@ -60,7 +60,7 @@ int main() {
         if(Verticies.size+1 > 3){
             cout<< "Enter color of face. Either in RGB format or by name: "
             cin >> color;
-            Face F(Verticies[0], Verticies[1], Verticies[2])
+            Face F(Verticies[0], Verticies[1], Verticies[2]);
             Faces.push_back(F);
             Verticies.clear();
             fcount++;
