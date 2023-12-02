@@ -51,8 +51,8 @@ int [] colordefine(string color){
 
 int main() {
     string yn = "yes";
-    vector<Vertex> Vertices;
-    vector<Face> Faces;
+    list<Vertex> Vertices;
+    list<Face> Faces;
     fcount = 1;
     while(yn != "stop"){
         string input;
@@ -64,6 +64,7 @@ int main() {
             cout<< "Enter color of face. Either in RGB format or by name: "
             cin >> color;
             Face F(Verticies[0], Verticies[1], Verticies[2])
+            Faces.push_back(F);
             Verticies.clear();
             fcount++;
         }
@@ -74,6 +75,7 @@ int main() {
         cin >> yn;   
     }
     }
+    /*
 	//ask user, how many faces?
     cout << "How many faces?";
     int faces;
@@ -101,5 +103,5 @@ int main() {
 	Model model1 = Model(faces);
  list<Faces> nan;
 
-
+*/
 }
