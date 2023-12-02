@@ -57,19 +57,19 @@ double * colordefine(string color){
 
 int main() {
     string yn = "yes";
-    list<Vertex> Verticies;
+    list<Vertex> Vertices;
     list<Face> Faces;
   int fcount = 1;
     while(yn != "stop"){
         string input;
         string color;
-        cout<< "Enter Coordinates for the x, y, and z axis of vertex number " , (Verticies.size()+1) , " of face number" , fcount , "in a comma or space separated list";
+        cout<< "Enter Coordinates for the x, y, and z axis of vertex number " , (Vertices.size()+1) , " of face number" , fcount , "in a comma or space separated list";
         cin >> input;
-        double coordinates[3] = convertList(input);
-        if(Verticies.size()+1 > 3){
+        double * coordinates = convertList(input);
+        if(Vertices.size()+1 > 3){
             cout<< "Enter color of face. Either in RGB format or by name: ";
             cin >> color;
-            Face F(Verticies[0], Verticies[1], Verticies[2]);
+            Face F(Vertices[0], Vertices[1], Vertices[2]);
             Faces.push_back(F);
             Verticies.clear();
             fcount++;
