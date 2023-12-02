@@ -58,7 +58,7 @@ int * colordefine(string color){
 
 int main() {
     string yn = "yes";
-    Vertex * Vertices[3];
+    vector <Vertex> Vertices;
     list<Face> Faces;
   int fcount = 1;
   int vcount = 0;
@@ -74,15 +74,13 @@ int main() {
             int * rgb = colordefine(color);
             Face F(Vertices[0], Vertices[1], Vertices[2], rgb); //trying to put Each vector from the array/list/vector into a face
             Faces.push_back(F); //Add face to list
-            Vertices[0] = NULL;
-             Vertices[1] = NULL;
-             Vertices[2] = NULL; // reset the array or vector of Vertices
+           Vertices.clear(); // reset the array or vector of Vertices
             fcount++; //increase count of number of faces
             vcount = 0; //reset vcount
         }
         else{
          Vertex V(coordinates[0], coordinates[1], coordinates[2]);
-        Vertices[vcount] = &V;
+        Vertices.push_back(V);
         vcount++;
         cout<< "Enter stop to stop entering values";
         cin >> yn;   
