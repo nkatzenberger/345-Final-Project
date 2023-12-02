@@ -4,15 +4,16 @@
 #include <list>
 #include<vector>
 #include "ref.h"
+#include "Vertex.cpp"
 #include <map>
 using namespace std;
 class UserInput {
 public:
-double *colordefine(string color);
-double * convertList(string input);
+int *colordefine(string color);
+int * convertList(string input);
 };
-double * convertList(string input){
-    double xyz[3];
+int * convertList(string input){
+    int xyz[3];
     int count =0;
     string number = ""; 
      for (int x = 0; x<input.size(); x++){
@@ -24,11 +25,11 @@ double * convertList(string input){
                 number = number + input[x];
             }
         }
-        double * pointer = xyz;
+        int * pointer = xyz;
         return(pointer);
 }
-double * colordefine(string color){
-    map<string, vector<double>> colorMap = 
+int * colordefine(string color){
+    map<string, vector<int>> colorMap = 
     {   {"red", {255, 0 ,0}},
      {"orange", {255, 128, 0}},
      {"yellow", {255, 255, 0}},
@@ -45,9 +46,9 @@ double * colordefine(string color){
      {"black", {0, 0, 0}},
      {"white", {255, 255, 255}}};
      if(colorMap.find(color)!=colorMap.end()){
-       double arr [3];
+       int arr [3];
         copy(colorMap[color].begin(),colorMap[color].end(),arr);
-        double * pointer = arr;
+        int * pointer = arr;
         return(pointer);
      }
      else{
@@ -57,31 +58,39 @@ double * colordefine(string color){
 
 int main() {
     string yn = "yes";
-    list<Vertex> Vertices;
+    Vertex * Vertices[3];
     list<Face> Faces;
   int fcount = 1;
+  int vcount = 0;
     while(yn != "stop"){
         string input;
         string color;
-        cout<< "Enter Coordinates for the x, y, and z axis of vertex number " , (Vertices.size()+1) , " of face number" , fcount , "in a comma or space separated list";
+        cout<< "Enter Coordinates for the x, y, and z axis of vertex number " , vcount+1 , " of face number" , fcount , "in a comma or space separated list";
         cin >> input;
-        double * coordinates = convertList(input);
-        if(Vertices.size()+1 > 3){
+        int * coordinates = convertList(input);
+        if(vcount > 3){
             cout<< "Enter color of face. Either in RGB format or by name: ";
             cin >> color;
-            Face F(Vertices[0], Vertices[1], Vertices[2]);
-            Faces.push_back(F);
-            Verticies.clear();
-            fcount++;
+            int * rgb = colordefine(color);
+            Face F(Vertices[0], Vertices[1], Vertices[2], rgb); //trying to put Each vector from the array/list/vector into a face
+            Faces.push_back(F); //Add face to list
+            Vertices[0] = NULL;
+             Vertices[1] = NULL;
+             Vertices[2] = NULL; // reset the array or vector of Vertices
+            fcount++; //increase count of number of faces
+            vcount = 0; //reset vcount
         }
         else{
          Vertex V(coordinates[0], coordinates[1], coordinates[2]);
-        Vertices.push_back(V);
+        Vertices[vcount] = &V;
+        vcount++;
         cout<< "Enter stop to stop entering values";
         cin >> yn;   
 
     }
     }
+        Model model(Faces);
+}
     /*
 	//ask user, how many faces?
     cout << "How many faces?";
@@ -118,4 +127,4 @@ int main() {
 
 */
 
-}
+
