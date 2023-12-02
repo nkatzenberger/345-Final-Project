@@ -81,7 +81,6 @@ int main() {
                 Face face(v1, v2, v3, rgb);
                 faces.push_back(face);
         }
-    }
 
     Model model(faces);
 }
