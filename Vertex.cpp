@@ -11,11 +11,7 @@ public:
         double getY;
         double getZ;
     
-    Vertex(double inputx, double inputy, double inputz){
-        x = inputx;
-        y = inputy;
-        z = inputz;
-    }
+    Vertex(double inputx, double inputy, double inputz) : x(inputx), y(inputy), z(inputz) {}
 
     void setX(double inx){
         x = inx;

@@ -79,6 +79,7 @@ int main() {
         Vertices.push_back(V);
         cout<< "Enter stop to stop entering values";
         cin >> yn;   
+
     }
     }
     /*
@@ -104,10 +105,17 @@ int main() {
 	vectorFaces[0].V2.z = -1;
 	//leave V3 as 0,0,0
 
-	faces[0].RGB[0] = 255; //makes red tri
+            cout << "enter 3 values for the RGB values";
+                int rgb[3];
+                cin >> rgb[0];
+                cin >> rgb[1];
+                cin >> rgb[2];
 
-	Model model1 = Model(faces);
- list<Faces> nan;
+                Face face(v1, v2, v3, rgb);
+                faces.push_back(face);
+        }
+
 
 */
+
 }
