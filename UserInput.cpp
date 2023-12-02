@@ -79,7 +79,31 @@ int main() {
         Vertices.push_back(V);
         cout<< "Enter stop to stop entering values";
         cin >> yn;   
+
     }
+    }
+    /*
+	//ask user, how many faces?
+    cout << "How many faces?";
+    int faces;
+    cin >> faces;
+	//const int number = 1;
+	vector<Face> vectorFaces;
+    int defaultColor[3] = {1,1,1}  
+    for(int i =0; i<= faces-3; i++){
+        Face f(Vertices[i], Vertices[i+1], Vertices[i+2], defaultColor);
+        vectorFaces.push_back(f);
+    }
+
+	//change aspects of faces
+	vectorFaces[0].V1.x = 1;
+	vectorFaces[0].V1.y = 1;
+	vectorFaces[0].V1.z = 1;
+
+	vectorFaces[0].V2.x = 0;
+	vectorFaces[0].V2.y = 2;
+	vectorFaces[0].V2.z = -1;
+	//leave V3 as 0,0,0
 
             cout << "enter 3 values for the RGB values";
                 int rgb[3];
@@ -91,5 +115,7 @@ int main() {
                 faces.push_back(face);
         }
 
-    Model model(faces);
+
+*/
+
 }
