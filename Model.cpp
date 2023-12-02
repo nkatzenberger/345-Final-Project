@@ -2,12 +2,10 @@
 class Model {
 public:
 
-	Face allFaces[];
+	list<Face> allFaces;
 
-	Model(Face inputFaces[]) {
-		for (int i = 0; i < sizeof(inputFaces); i++) {
-			allFaces[i] = inputFaces[i];
-		}
+	Model(list<Face> inputFaces) {
+			allFaces = inputFaces;
 	}
 	/*void delete() {
 		for (Face allFaces[]: dd){
