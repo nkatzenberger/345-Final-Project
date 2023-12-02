@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Face.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="UserInput.cpp" />
     <ClCompile Include="Vertex.cpp" />
   </ItemGroup>
   <ItemGroup>
