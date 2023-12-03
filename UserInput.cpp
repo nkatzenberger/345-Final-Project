@@ -5,27 +5,28 @@
 #include<vector>
 #include "ref.h"
 #include <map>
+#include <sstream>
 using namespace std;
 class UserInput {
 public:
 int *colordefine(string color);
-int * convertList(string input);
+vector<int> convertList(string input);
 };
-int * convertList(string input){
-    int xyz[3];
-    int count =0;
-    string number = ""; 
-     for (int x = 0; x<input.size(); x++){
-            if ((input[x] == ' ' || input[x] == ',')&& number.size()>0){
-                xyz[count] = stod(number);
-                number = ""; count ++;
-            }
-            else{
-                number = number + input[x];
-            }
+vector<int> convertList(string input) {
+    vector<int> result;
+    stringstream ss(input);
+    int num;
+    int count = 0;
+    while (ss >> num) {
+         if (count < 3) {
+            result.push_back(num);
+            count++;
         }
-        int * pointer = xyz;
-        return(pointer);
+        if (ss.peek() == ',' || ss.peek() == ' ') {
+            ss.ignore();
+        }
+    }
+    return result;
 }
 int * colordefine(string color){
     map<string, vector<int>> colorMap = 
@@ -51,7 +52,11 @@ int * colordefine(string color){
         return(pointer);
      }
      else{
-        return(convertList(color));
+        vector<int> temp = convertList(color);
+        int vtoA [3];
+         copy(temp.begin(),temp.end(),vtoA);
+        int * p1 = vtoA;
+        return(p1);
      }
 }
 
@@ -60,31 +65,31 @@ int main() {
     vector <Vertex> Vertices;
     list<Face> Faces;
   int fcount = 1;
-  int vcount = 0;
+ // int vcount = 0;
     while(yn != "stop"){
-        string input;
-        string color;
-        cout<< "Enter Coordinates for the x, y, and z axis of vertex number " << vcount+1 << " of face number " << fcount << " in a comma or space separated list";
-        cin >> input;
-        int * coordinates = convertList(input);
-        if(vcount > 3){
-            cout<< "Enter color of face. Either in RGB format or by name: ";
+        if(Vertices.size()+1 <= 3){
+            string input;
+            cout<< "Enter Coordinates for the x, y, and z axis of vertex number " << Vertices.size()+1 << " of face number " << fcount << " in a comma or space separated list: \n";
+            cin >> input;
+           vector<int> coordinates = convertList(input);
+            cout <<"The size is: " << Vertices.size();
+            Vertex V(coordinates[0], coordinates[1], coordinates[2]);
+            Vertices.push_back(V);
+        }
+        else {
+            string color;
+            cout<< "\nEnter color of face. Either in RGB format or by name: \n";
             cin >> color;
             int * rgb = colordefine(color);
             Face F(Vertices[0], Vertices[1], Vertices[2], rgb); //trying to put Each vector from the array/list/vector into a face
             Faces.push_back(F); //Add face to list
            Vertices.clear(); // reset the array or vector of Vertices
             fcount++; //increase count of number of faces
-            vcount = 0; //reset vcount
+            //vcount = 0; //reset vcount
+              cout<< "\n Enter stop to stop entering values";
+            cin >> yn; 
         }
-        else{
-         Vertex V(coordinates[0], coordinates[1], coordinates[2]);
-        Vertices.push_back(V);
-        vcount++;
-        cout<< "Enter stop to stop entering values";
-        cin >> yn;   
-
-    }
+        //vcount++;
     }
         Model model(Faces);
         model.toString();
