@@ -50,7 +50,8 @@ int * colordefine(string color){
      {"pink", {255, 0, 127}},
      {"gray", {128, 128, 128}},
      {"black", {0, 0, 0}},
-     {"white", {255, 255, 255}}};
+     {"white", {255, 255, 255}},
+     {"brown", {150, 75, 0}}};
      if(colorMap.find(color)!=colorMap.end()){
        int arr [3];
         copy(colorMap[color].begin(),colorMap[color].end(),arr);
