@@ -70,26 +70,23 @@ int main() {
         if(Vertices.size()+1 <= 3){
             string input;
             cout<< "Enter Coordinates for the x, y, and z axis of vertex number " << Vertices.size()+1 << " of face number " << fcount << " in a comma or space separated list: \n";
-            cin >> input;
-           vector<int> coordinates = convertList(input);
-            cout <<"The size is: " << Vertices.size();
-            Vertex V(coordinates[0], coordinates[1], coordinates[2]);
-            Vertices.push_back(V);
+            getline(cin, input); //get whole line entered avoids space being counted as 2 inputs
+            vector<int> coordinates = convertList(input);
+            Vertex V(coordinates[0], coordinates[1], coordinates[2]); //adds coordinates to vertex
+            Vertices.push_back(V); //adds vertex to list
         }
         else {
             string color;
             cout<< "\nEnter color of face. Either in RGB format or by name: \n";
-            cin >> color;
+            getline(cin, color); //some color names have a space in them 
             int * rgb = colordefine(color);
-            Face F(Vertices[0], Vertices[1], Vertices[2], rgb); //trying to put Each vector from the array/list/vector into a face
+            Face F(Vertices[0], Vertices[1], Vertices[2], rgb); //puts vectors into face
             Faces.push_back(F); //Add face to list
-           Vertices.clear(); // reset the array or vector of Vertices
+           Vertices.clear(); // reset the array or vectors i.e. Vertices
             fcount++; //increase count of number of faces
-            //vcount = 0; //reset vcount
-              cout<< "\n Enter stop to stop entering values";
+              cout<< "\n Enter stop to stop entering values. Or press enter to coninue \n";
             cin >> yn; 
         }
-        //vcount++;
     }
         Model model(Faces);
         model.toString();
