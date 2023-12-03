@@ -13,13 +13,19 @@ int *colordefine(string color);
 vector<int> convertList(string input);
 };
 vector<int> convertList(string input) {
-    vector<int> result;
+    vector<int> result(3,0);
     stringstream ss(input);
     int num;
     int count = 0;
+    if (input.size() ==0){
+        result.push_back(0);
+        result.push_back(0);
+        result.push_back(0);
+        return result;
+    }
     while (ss >> num) {
          if (count < 3) {
-            result.push_back(num);
+            result[count] = num;
             count++;
         }
         if (ss.peek() == ',' || ss.peek() == ' ') {
@@ -65,8 +71,8 @@ int main() {
     vector <Vertex> Vertices;
     list<Face> Faces;
   int fcount = 1;
- // int vcount = 0;
-    while(yn != "stop"){
+  bool going = true;
+    while(going){
         if(Vertices.size()+1 <= 3){
             string input;
             cout<< "Enter Coordinates for the x, y, and z axis of vertex number " << Vertices.size()+1 << " of face number " << fcount << " in a comma or space separated list: \n";
@@ -82,16 +88,19 @@ int main() {
             int * rgb = colordefine(color);
             Face F(Vertices[0], Vertices[1], Vertices[2], rgb); //puts vectors into face
             Faces.push_back(F); //Add face to list
-           Vertices.clear(); // reset the array or vectors i.e. Vertices
+            Vertices.clear(); // reset the array or vectors i.e. Vertices
             fcount++; //increase count of number of faces
-              cout<< "\n Enter stop to stop entering values. Or press enter to coninue \n";
-            cin >> yn; 
+            cout<< "\n Enter stop to stop entering values. Or press enter to coninue \n";
+            getline(cin,  yn); 
+                if (yn == "stop"){
+                    going = false;
+                }
         }
     }
         Model model(Faces);
         model.toString();
 }
-    /*
+    /* //emergency code
 	//ask user, how many faces?
     cout << "How many faces?";
     int faces;
