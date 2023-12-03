@@ -4,7 +4,6 @@
 #include <list>
 #include<vector>
 #include "ref.h"
-#include "Vertex.cpp"
 #include <map>
 using namespace std;
 class UserInput {

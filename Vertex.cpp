@@ -1,34 +1,41 @@
 #include <iostream>
 #include "ref.h"
+#ifndef VERTEX_H
+#define VERTEX_H
+
 using namespace std;
 
 class Vertex {
 public:
-        double x;
-        double y;
-        double z;
-        double getX;
-        double getY;
-        double getZ;
+        int x;
+        int y;
+        int z;
+         int getX();
+         int getY();
+         int getZ();
+        void setX(int inx);
+        void setY(int iny);
+        void setZ(int inz);
     
-    Vertex(double inputx, double inputy, double inputz) : x(inputx), y(inputy), z(inputz) {}
+    Vertex(int inputx, int inputy, int inputz) : x(inputx), y(inputy), z(inputz) {}
 
-    void setX(double inx){
+    void setX(int inx){
         x = inx;
     }
-    void setY(double iny){
+    void setY(int iny){
         y = iny;
     }
-    void setZ(double inz){
+    void setZ(int inz){
         z = inz;
     }
-    double getX(){
+    int getX(){
         return x;
     }
-    double getY(){
+    int getY(){
         return y;
     }
-    double getZ(){
+    int getZ(){
         return z;
     }
 };
+#endif 
