@@ -1,6 +1,6 @@
 #include "ref.h"
-#ifndef VERTEX_H
-#define VERTEX_H
+#ifndef FACE_H
+#define FACE_H
 class Face {
 public:
 	Vertex V1, V2, V3;

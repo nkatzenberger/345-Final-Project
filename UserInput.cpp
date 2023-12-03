@@ -64,7 +64,7 @@ int main() {
     while(yn != "stop"){
         string input;
         string color;
-        cout<< "Enter Coordinates for the x, y, and z axis of vertex number " , vcount+1 , " of face number" , fcount , "in a comma or space separated list";
+        cout<< "Enter Coordinates for the x, y, and z axis of vertex number " << vcount+1 << " of face number " << fcount << " in a comma or space separated list";
         cin >> input;
         int * coordinates = convertList(input);
         if(vcount > 3){
@@ -87,6 +87,7 @@ int main() {
     }
     }
         Model model(Faces);
+        model.toString();
 }
     /*
 	//ask user, how many faces?
