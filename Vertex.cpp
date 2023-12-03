@@ -1,5 +1,6 @@
 #include <iostream>
 #include "ref.h"
+#pragma once
 #ifndef VERTEX_H
 #define VERTEX_H
 
@@ -20,13 +21,13 @@ public:
     Vertex(int inputx, int inputy, int inputz) : x(inputx), y(inputy), z(inputz) {}
 
     void setX(int inx){
-        x = inx;
+        this -> x = inx;
     }
     void setY(int iny){
-        y = iny;
+        this -> y = iny;
     }
     void setZ(int inz){
-        z = inz;
+       this ->z = inz;
     }
     int getX(){
         return x;
