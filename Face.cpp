@@ -1,4 +1,6 @@
 #include "ref.h"
+#ifndef VERTEX_H
+#define VERTEX_H
 class Face {
 public:
 	Vertex V1, V2, V3;
@@ -8,3 +10,4 @@ public:
 		RGB[0] = rgb[0]; RGB[1] = rgb[1]; RGB[2] = rgb[2];
 	}
 };
+#endif

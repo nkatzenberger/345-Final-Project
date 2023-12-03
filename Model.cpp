@@ -1,5 +1,9 @@
+#include <iostream>
 #include "ref.h"
 #include <list>
+#include "Face.cpp"
+#ifndef VERTEX_H
+#define VERTEX_H
 class Model {
 public:
 
@@ -17,10 +21,12 @@ public:
             cout << "  Vertex 2: (" << face.V2.x << ", " << face.V2.y << ", " << face.V2.z << ")" << std::endl;
             cout << "  Vertex 3: (" << face.V3.x << ", " << face.V3.y << ", " << face.V3.z << ")" << std::endl;
             count++;
-        }
+         }
     }
 	/*void delete() {
 		for (Face allFaces[]: dd){
 		dd = null;
 	}*/
 };
+
+#endif
