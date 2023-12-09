@@ -1,6 +1,6 @@
 #include <GLAD/glad.h> 
 #include <OpenGL/glfw3.h>
-//test
+
 int main()
 {
     glfwInit();
