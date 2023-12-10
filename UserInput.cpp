@@ -1,4 +1,4 @@
-
+/*
 #include <iostream>
 #include <string>
 #include <list>
@@ -100,7 +100,7 @@ int main() {
     }
         Model model(Faces);
         model.toString();
-}
+} */
     /* //emergency code
 	//ask user, how many faces?
     cout << "How many faces?";
