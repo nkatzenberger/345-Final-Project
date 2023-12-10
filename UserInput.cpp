@@ -12,6 +12,7 @@ public:
 int *colordefine(string color);
 vector<int> convertList(string input);
 };
+//TODO: Convert to float
 vector<int> convertList(string input) {
     vector<int> result(3,0);
     stringstream ss(input);
