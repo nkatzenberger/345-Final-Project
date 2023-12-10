@@ -23,3 +23,4 @@ if (window == NULL)
 }
 glfwMakeContextCurrent(window);
 }
+//test
