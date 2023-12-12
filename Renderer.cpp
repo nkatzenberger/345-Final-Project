@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include "ref.h"
 /*class Renderer { //To be added 
     public:
     }; 
@@ -12,7 +12,7 @@ shell32.lib //included libraries
 */
 //test
 //#include "GLAD/glad.h" 
-/*
+
 #include "glad.c"
 #include <GLFW/glfw3.h>
 #include <windows.h>
@@ -40,7 +40,8 @@ const char* fragmentShaderSource = "#version 330 core\n"
 "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
 "}\n\0";
 
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
+//int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
+int Rend (Model m)
 {
     // glfw: initialize and configure
  // ------------------------------
@@ -116,6 +117,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
+     const int size = m.allFaces.size();
+    float verticies[size]; //needs a fix
+
+    for (Face f : m.allFaces) {
+
+    }
     float vertices[] = {
         -0.5f, -0.5f, 0.0f, // left  
          0.5f, -0.5f, 0.0f, // right 
@@ -194,4 +201,4 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     // make sure the viewport matches the new window dimensions; note that width and 
     // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);
-} */
+} 
