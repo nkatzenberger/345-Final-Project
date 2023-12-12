@@ -1,4 +1,4 @@
-/*
+
 #include <iostream>
 #include <string>
 #include <list>
@@ -9,14 +9,14 @@
 using namespace std;
 class UserInput {
 public:
-int *colordefine(string color);
-vector<int> convertList(string input);
+float *colordefine(string color);
+vector<float> convertList(string input);
 };
 //TODO: Convert to float
-vector<int> convertList(string input) {
-    vector<int> result(3,0);
+vector<float> convertList(string input) {
+    vector<float> result(3,0);
     stringstream ss(input);
-    int num;
+    float num;
     int count = 0;
     if (input.size() ==0){
         result.push_back(0);
@@ -35,7 +35,7 @@ vector<int> convertList(string input) {
     }
     return result;
 }
-int * colordefine(string color){
+float *colordefine(string color){
     map<string, vector<int>> colorMap = 
     {   {"red", {255, 0 ,0}},
      {"orange", {255, 128, 0}},
@@ -54,16 +54,16 @@ int * colordefine(string color){
      {"white", {255, 255, 255}},
      {"brown", {150, 75, 0}}};
      if(colorMap.find(color)!=colorMap.end()){
-       int arr [3];
+       float arr [3];
         copy(colorMap[color].begin(),colorMap[color].end(),arr);
-        int * pointer = arr;
+        float * pointer = arr;
         return(pointer);
      }
      else{
-        vector<int> temp = convertList(color);
-        int vtoA [3];
+        vector<float> temp = convertList(color);
+        float vtoA [3];
          copy(temp.begin(),temp.end(),vtoA);
-        int * p1 = vtoA;
+        float * p1 = vtoA;
         return(p1);
      }
 }
@@ -79,7 +79,7 @@ int main() {
             string input;
             cout<< "Enter Coordinates for the x, y, and z axis of vertex number " << Vertices.size()+1 << " of face number " << fcount << " in a comma or space separated list: \n";
             getline(cin, input); //get whole line entered avoids space being counted as 2 inputs
-            vector<int> coordinates = convertList(input);
+            vector<float> coordinates = convertList(input);
             Vertex V(coordinates[0], coordinates[1], coordinates[2]); //adds coordinates to vertex
             Vertices.push_back(V); //adds vertex to list
         }
@@ -87,7 +87,7 @@ int main() {
             string color;
             cout<< "\nEnter color of face. Either in RGB format or by name: \n";
             getline(cin, color); //some color names have a space in them 
-            int * rgb = colordefine(color);
+            float * rgb = colordefine(color);
             Face F(Vertices[0], Vertices[1], Vertices[2], rgb); //puts vectors into face
             Faces.push_back(F); //Add face to list
             Vertices.clear(); // reset the array or vectors i.e. Vertices
@@ -101,7 +101,7 @@ int main() {
     }
         Model model(Faces);
         model.toString();
-} */
+} 
     /* //emergency code
 	//ask user, how many faces?
     cout << "How many faces?";

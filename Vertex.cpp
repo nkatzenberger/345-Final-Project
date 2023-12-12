@@ -8,29 +8,29 @@ using namespace std;
 
 class Vertex {
 public:
-        int x;
-        int y;
-        int z;
+        float x;
+        float y;
+        float z;
         
-    Vertex(int inputx, int inputy, int inputz) : x(inputx), y(inputy), z(inputz) {}
+    Vertex(float inputx, float inputy, float inputz) : x(inputx), y(inputy), z(inputz) {}
 
-    void setX(int inx){
+    void setX(float inx){
         this -> x = inx;
     }
-    void setY(int iny){
+    void setY(float iny){
         this -> y = iny;
     }
-    void setZ(int inz){
+    void setZ(float inz){
        this ->z = inz;
     }
-    int getX(){
+    float getX(){
         return x;
     }
-    int getY(){
+    float getY(){
         return y;
     }
-    int getZ(){
+    float getZ(){
         return z;
     }
 };
-#endif 
+#endif;
