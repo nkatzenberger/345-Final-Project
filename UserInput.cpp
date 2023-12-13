@@ -1,4 +1,4 @@
-
+#pragma once
 #include <iostream>
 #include <string>
 #include <list>
@@ -6,11 +6,14 @@
 #include "ref.h"
 #include <map>
 #include <sstream>
+#include <windows.h>
+#include "Renderer.cpp"
 using namespace std;
 class UserInput {
 public:
-float *colordefine(string color);
-vector<float> convertList(string input);
+//float *colordefine(string color);
+//vector<float> convertList(string input);
+//Model returnModel();
 };
 //TODO: Convert to float
 vector<float> convertList(string input) {
@@ -62,13 +65,17 @@ float *colordefine(string color){
      else{
         vector<float> temp = convertList(color);
         float vtoA [3];
-         copy(temp.begin(),temp.end(),vtoA);
+        for (int i = 0; i < sizeof(vtoA); i++) {
+            vtoA[i] = temp[i];
+        }
         float * p1 = vtoA;
         return(p1);
      }
 }
 
-int main() {
+ //Model returnModel(){
+//int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd) {
+int main(){
     string yn = "yes";
     vector <Vertex> Vertices;
     list<Face> Faces;
@@ -100,7 +107,8 @@ int main() {
         }
     }
         Model model(Faces);
-        model.toString();
+       // return model;
+       model.toString();
 } 
     /* //emergency code
 	//ask user, how many faces?
